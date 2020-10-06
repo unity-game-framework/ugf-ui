@@ -1,0 +1,15 @@
+{
+    "name": "UGF.UI.Editor",
+    "references": [
+        "GUID:97db1687e03501a4d90f208454febb18"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
