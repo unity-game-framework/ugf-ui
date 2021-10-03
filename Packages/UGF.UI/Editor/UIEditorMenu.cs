@@ -6,7 +6,7 @@ namespace UGF.UI.Editor
 {
     internal static class UIEditorMenu
     {
-        [MenuItem("CONTEXT/RectTransform/Anchors To Corners", false, 2000)]
+        [MenuItem("CONTEXT/RectTransform/Anchors/Anchors To Corners", false, 2000)]
         private static void RectTransformAnchorsToCorners(MenuCommand menuCommand)
         {
             var rectTransform = (RectTransform)menuCommand.context;
@@ -16,7 +16,7 @@ namespace UGF.UI.Editor
             EditorUtility.SetDirty(rectTransform);
         }
 
-        [MenuItem("CONTEXT/RectTransform/Corners To Anchors", false, 2000)]
+        [MenuItem("CONTEXT/RectTransform/Anchors/Corners To Anchors", false, 2000)]
         private static void RectTransformCornersToAnchors(MenuCommand menuCommand)
         {
             var rectTransform = (RectTransform)menuCommand.context;

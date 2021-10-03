@@ -1,5 +1,6 @@
 {
     "name": "UGF.UI.Runtime",
+    "rootNamespace": "UGF.UI.Runtime",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
