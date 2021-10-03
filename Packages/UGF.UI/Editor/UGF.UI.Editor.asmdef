@@ -1,9 +1,12 @@
 {
     "name": "UGF.UI.Editor",
+    "rootNamespace": "UGF.UI.Editor",
     "references": [
         "GUID:97db1687e03501a4d90f208454febb18"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
