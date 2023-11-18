@@ -2,7 +2,8 @@
     "name": "UGF.UI.Editor",
     "rootNamespace": "UGF.UI.Editor",
     "references": [
-        "GUID:97db1687e03501a4d90f208454febb18"
+        "GUID:97db1687e03501a4d90f208454febb18",
+        "GUID:abdd615e45137c74ca2ce9c636c78c15"
     ],
     "includePlatforms": [
         "Editor"
