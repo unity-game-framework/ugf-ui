@@ -20,6 +20,7 @@ on:
         required: false
 
 env:
+  GITHUB_TOKEN: ${{ secrets.userToken }}
   name: ${{ github.event.inputs.name }}
   displayName: ${{ github.event.inputs.displayName }}
   description: ${{ github.event.inputs.description }}
@@ -33,17 +34,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         token: ${{ secrets.userToken }}
         ref: ${{ env.branch }}
     - name: Setup
       run: |
+        mv "Packages/Package" "Packages/${{ env.displayName }}"
+        gh api repos/${{ github.repository }}/milestones -f title=Unreleased
+        
         packagePath=$(find "Packages" -name "package.json" -type f)
 
         echo "packagePath=$packagePath" >> $GITHUB_ENV
     - name: Config
-      uses: unity-game-framework-actions/file-access@master
+      uses: unity-game-framework-actions/file-access@main
       id: config
       with:
         input: |
@@ -52,7 +56,7 @@ jobs:
               input: ${{ env.configPath }}
               path: readme
     - name: Update
-      uses: unity-game-framework-actions/file-access@master
+      uses: unity-game-framework-actions/file-access@main
       with:
         input: |
           set:
@@ -81,7 +85,7 @@ jobs:
               path: repository.url
               value: git://github.com/${{ env.repositoryName }}.git
     - name: Readme
-      uses: unity-game-framework-actions/package-readme@master
+      uses: unity-game-framework-actions/package-readme@main
       with:
         input: ${{ env.packagePath }}
         config: ${{ steps.config.outputs.readme }}
@@ -90,7 +94,6 @@ jobs:
       run: |
         git config user.name ${{ secrets.userName }}
         git config user.email ${{ secrets.userEmail }}
-        git add ${{ env.packagePath }}
-        git add readme.md
+        git add *
         git commit -m "Setup project"
         git push
