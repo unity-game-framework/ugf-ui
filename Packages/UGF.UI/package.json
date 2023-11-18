@@ -19,6 +19,7 @@
     "registry": "https://api.upmhub.org/registries/unity-game-framework"
   },
   "dependencies": {
-    "com.unity.modules.ui": "1.0.0"
+    "com.ugf.editortools": "3.0.0-preview",
+    "com.unity.ugui": "2.0.0"
   }
 }
