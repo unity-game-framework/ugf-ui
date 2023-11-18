@@ -2,8 +2,8 @@
   "name": "com.ugf.ui",
   "displayName": "UGF.UI",
   "version": "1.0.1",
-  "unity": "2021.1",
-  "apiCompatibility": ".NET Standard 2.0",
+  "unity": "2023.2",
+  "apiCompatibility": ".NET Standard 2.1",
   "description": "Provides utilities to work with Unity UI.",
   "author": {
     "name": "Unity Game Framework",
