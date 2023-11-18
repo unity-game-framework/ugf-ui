@@ -2,15 +2,16 @@
 
 UGF.UI
 
-## Info
+## Information
 
-- **Version**: `1.0.1`
-- **Unity**: `2021.1`
-- **API Compatibility Level**: `.NET Standard 2.0`
+- **Version**: `2.0.0-preview`
+- **Unity**: `2023.2`
+- **API Compatibility Level**: `.NET Standard 2.1`
 
 ### Dependencies
 
-- `com.unity.modules.ui`: `1.0.0`
+- `com.ugf.editortools`: `3.0.0-preview`
+- `com.unity.ugui`: `2.0.0`
 
 
 ### Description
