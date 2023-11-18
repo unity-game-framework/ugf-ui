@@ -5,7 +5,7 @@ namespace UGF.UI.Runtime.Components
 {
     [RequireComponent(typeof(CanvasRenderer))]
     [AddComponentMenu("Unity Game Framework/UI/Graphic Empty", 2000)]
-    public class GraphicEmpty : Graphic
+    public class GraphicEmptyComponent : Graphic
     {
         public override void SetVerticesDirty()
         {

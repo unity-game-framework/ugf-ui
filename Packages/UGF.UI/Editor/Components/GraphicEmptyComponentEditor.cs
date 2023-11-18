@@ -5,8 +5,8 @@ using UnityEditor;
 
 namespace UGF.UI.Editor.Components
 {
-    [CustomEditor(typeof(GraphicEmpty), true)]
-    internal class GraphicEmptyEditor : UnityEditor.Editor
+    [CustomEditor(typeof(GraphicEmptyComponent), true)]
+    internal class GraphicEmptyComponentEditor : UnityEditor.Editor
     {
         private SerializedProperty m_propertyRaycastTarget;
         private SerializedProperty m_propertyRaycastPadding;
