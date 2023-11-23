@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0-preview.1](https://github.com/unity-game-framework/ugf-ui/releases/tag/2.0.0-preview.1) - 2023-11-23  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-ui/milestone/3?closed=1)  
+    
+
+### Fixed
+
+- Fix components menu order value ([#10](https://github.com/unity-game-framework/ugf-ui/issues/10))  
+    - Fix `LayoutCollectionComponent`, `LayoutGroupComponent`, `LayoutGroupVirtualComponent` and `LayoutTextComponent` classes with proper order value for component menu attributes.
+
 ## [2.0.0-preview](https://github.com/unity-game-framework/ugf-ui/releases/tag/2.0.0-preview) - 2023-11-18  
 
 ### Release Notes
