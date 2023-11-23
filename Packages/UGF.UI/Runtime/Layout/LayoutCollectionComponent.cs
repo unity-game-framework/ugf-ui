@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UGF.UI.Runtime.Layout
 {
-    [AddComponentMenu("Unity Game Framework/UI/Layout Collection", 3000)]
+    [AddComponentMenu("Unity Game Framework/UI/Layout Collection", 2000)]
     public class LayoutCollectionComponent : LayoutComponent
     {
         [SerializeField] private List<LayoutComponent> m_layouts = new List<LayoutComponent>();
