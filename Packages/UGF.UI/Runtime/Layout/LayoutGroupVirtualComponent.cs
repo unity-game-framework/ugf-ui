@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UGF.UI.Runtime.Layout
 {
-    [AddComponentMenu("Unity Game Framework/UI/Layout Group Virtual", 3000)]
+    [AddComponentMenu("Unity Game Framework/UI/Layout Group Virtual", 2000)]
     public class LayoutGroupVirtualComponent : LayoutComponent
     {
         [SerializeField] private RectTransform m_root;

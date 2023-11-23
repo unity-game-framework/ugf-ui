@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UGF.UI.Runtime.Layout
 {
-    [AddComponentMenu("Unity Game Framework/UI/Layout Text", 3000)]
+    [AddComponentMenu("Unity Game Framework/UI/Layout Text", 2000)]
     public class LayoutTextComponent : LayoutComponent
     {
         [SerializeField] private RectTransform m_root;
