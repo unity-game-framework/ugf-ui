@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0-preview.2](https://github.com/unity-game-framework/ugf-ui/releases/tag/2.0.0-preview.2) - 2023-11-25  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-ui/milestone/4?closed=1)  
+    
+
+### Added
+
+- Add layout virtual scroll component ([#12](https://github.com/unity-game-framework/ugf-ui/issues/12))  
+    - Update dependencies: add `com.ugf.runtimetools` of `3.0.0-preview` version.
+    - Add `LayoutGroupVirtualScrollComponent` class as component to implement virtual layout inside scroll rect.
+
 ## [2.0.0-preview.1](https://github.com/unity-game-framework/ugf-ui/releases/tag/2.0.0-preview.1) - 2023-11-23  
 
 ### Release Notes
