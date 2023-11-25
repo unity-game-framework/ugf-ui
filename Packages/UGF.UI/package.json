@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "com.ugf.editortools": "3.0.0-preview",
+    "com.ugf.runtimetools": "3.0.0-preview",
     "com.unity.ugui": "2.0.0"
   }
 }
