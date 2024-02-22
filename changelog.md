@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0-preview.3](https://github.com/unity-game-framework/ugf-ui/releases/tag/2.0.0-preview.3) - 2024-02-22  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-ui/milestone/5?closed=1)  
+    
+
+### Added
+
+- Add group virtual scroll generic with handler arguments ([#14](https://github.com/unity-game-framework/ugf-ui/issues/14))  
+    - Add `ILayoutGroupVirtualScrollConstructor` interface as abstract scroll items constructor.
+    - Add `LayoutGroupVirtualScrollConstructorHandlers` and `LayoutGroupVirtualScrollConstructorHandlers<T>` classes as default implementation of scroll items construction.
+    - Change `LayoutGroupVirtualScrollComponent` class to work using instance of `ILayoutGroupVirtualScrollConstructor` interface.
+
 ## [2.0.0-preview.2](https://github.com/unity-game-framework/ugf-ui/releases/tag/2.0.0-preview.2) - 2023-11-25  
 
 ### Release Notes
