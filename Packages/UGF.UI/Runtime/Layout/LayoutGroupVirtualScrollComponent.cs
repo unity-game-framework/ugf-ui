@@ -19,10 +19,10 @@ namespace UGF.UI.Runtime.Layout
         public Vector4 ViewportPadding { get { return m_viewportPadding; } set { m_viewportPadding = value; } }
         public Vector2 EntryDefaultSize { get { return m_entryDefaultSize; } set { m_entryDefaultSize = value; } }
         public Dictionary<Rect, ContainerComponent> Containers { get; } = new Dictionary<Rect, ContainerComponent>();
-        public bool HasHandlers { get { return m_createHandler != null && m_deleteHandler != null; } }
+        public ILayoutGroupVirtualScrollConstructor Constructor { get { return m_constructor ?? throw new ArgumentException("Value not specified."); } }
+        public bool HasConstructor { get { return m_constructor != null; } }
 
-        private LayoutGroupVirtualScrollCreateHandler m_createHandler;
-        private LayoutGroupVirtualScrollDeleteHandler m_deleteHandler;
+        private ILayoutGroupVirtualScrollConstructor m_constructor;
 
         private void Awake()
         {
@@ -58,15 +58,13 @@ namespace UGF.UI.Runtime.Layout
 
         public void DeleteAll()
         {
-            if (!HasHandlers) throw new InvalidOperationException("No handlers specified.");
-
             for (int i = 0; i < m_layout.Children.Count; i++)
             {
                 Rect rect = m_layout.Children[i];
 
                 if (Containers.Remove(rect, out ContainerComponent container))
                 {
-                    m_deleteHandler.Invoke(i, container);
+                    Constructor.Delete(i, container);
                 }
             }
 
@@ -75,28 +73,34 @@ namespace UGF.UI.Runtime.Layout
             Containers.Clear();
         }
 
-        public void SetHandlers(LayoutGroupVirtualScrollCreateHandler createHandler, LayoutGroupVirtualScrollDeleteHandler deleteHandler)
+        public void SetHandlers<T>(T arguments, LayoutGroupVirtualScrollCreateHandler<T> createHandler, LayoutGroupVirtualScrollDeleteHandler<T> deleteHandler)
         {
-            m_createHandler = createHandler ?? throw new ArgumentNullException(nameof(createHandler));
-            m_deleteHandler = deleteHandler ?? throw new ArgumentNullException(nameof(deleteHandler));
+            SetConstructor(new LayoutGroupVirtualScrollConstructorHandlers<T>(arguments, createHandler, deleteHandler));
         }
 
-        public void ClearHandlers()
+        public void SetHandlers(LayoutGroupVirtualScrollCreateHandler createHandler, LayoutGroupVirtualScrollDeleteHandler deleteHandler)
         {
-            m_createHandler = default;
-            m_deleteHandler = default;
+            SetConstructor(new LayoutGroupVirtualScrollConstructorHandlers(createHandler, deleteHandler));
+        }
+
+        public void SetConstructor(ILayoutGroupVirtualScrollConstructor constructor)
+        {
+            m_constructor = constructor ?? throw new ArgumentNullException(nameof(constructor));
+        }
+
+        public void ClearConstructor()
+        {
+            m_constructor = default;
         }
 
         public void Clear()
         {
             DeleteAll();
-            ClearHandlers();
+            ClearConstructor();
         }
 
         public void Calculate()
         {
-            if (!HasHandlers) throw new InvalidOperationException("No handlers specified.");
-
             Rect viewportRect = m_scroll.viewport.rect;
 
             viewportRect.xMin += m_viewportPadding.x;
@@ -117,7 +121,7 @@ namespace UGF.UI.Runtime.Layout
                 {
                     if (!Containers.ContainsKey(rect))
                     {
-                        ContainerComponent container = m_createHandler.Invoke(i);
+                        ContainerComponent container = Constructor.Create(i);
 
                         Containers.Add(rect, container);
 
@@ -129,14 +133,14 @@ namespace UGF.UI.Runtime.Layout
                 }
                 else if (Containers.Remove(rect, out ContainerComponent container))
                 {
-                    m_deleteHandler.Invoke(i, container);
+                    Constructor.Delete(i, container);
                 }
             }
         }
 
         private void OnChanged(Vector2 position)
         {
-            if (HasHandlers)
+            if (HasConstructor)
             {
                 Calculate();
             }
