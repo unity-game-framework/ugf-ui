@@ -16,21 +16,22 @@ namespace UGF.UI.Editor.Layout
 
         protected void DrawControls()
         {
+            EditorGUILayout.Space(EditorGUIUtility.standardVerticalSpacing);
+
             using (new EditorGUILayout.HorizontalScope())
             {
                 GUILayout.FlexibleSpace();
 
                 OnDrawControls();
-
-                if (GUILayout.Button("Calculate", GUILayout.Width(75F)))
-                {
-                    OnCalculate();
-                }
             }
         }
 
         protected virtual void OnDrawControls()
         {
+            if (GUILayout.Button("Calculate", GUILayout.Width(75F)))
+            {
+                OnCalculate();
+            }
         }
 
         protected virtual void OnCalculate()
