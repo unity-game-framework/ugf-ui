@@ -718,6 +718,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1328318210}
   - component: {fileID: 1328318211}
+  - component: {fileID: 1328318213}
+  - component: {fileID: 1328318212}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -756,6 +758,35 @@ MonoBehaviour:
   m_layout: {fileID: 0}
   m_viewportPadding: {x: 0, y: 0, z: 0, w: 0}
   m_entryDefaultSize: {x: 100, y: 100}
+--- !u!114 &1328318212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328318209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934b2fd9e36243a78d74a7df34e70be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 0}
+  m_image: {fileID: 0}
+--- !u!114 &1328318213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328318209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1b19087a38403480abd37480dc92a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 0}
+  m_autoAspectRatio: 0
+  m_aspectRatio: 0
 --- !u!1 &1407147548
 GameObject:
   m_ObjectHideFlags: 0

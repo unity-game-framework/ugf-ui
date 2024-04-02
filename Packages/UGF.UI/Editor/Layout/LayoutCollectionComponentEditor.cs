@@ -41,8 +41,6 @@ namespace UGF.UI.Editor.Layout
 
         protected override void OnDrawControls()
         {
-            base.OnDrawControls();
-
             using (new EditorGUI.DisabledScope(m_listLayouts.SerializedProperty.arraySize == 0))
             {
                 if (GUILayout.Button("Clear", GUILayout.Width(75F)))
@@ -55,6 +53,8 @@ namespace UGF.UI.Editor.Layout
             {
                 OnCollect();
             }
+
+            base.OnDrawControls();
         }
 
         private void OnCollect()
