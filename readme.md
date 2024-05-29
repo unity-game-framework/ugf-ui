@@ -4,13 +4,13 @@ UGF.UI
 
 ## Information
 
-- **Version**: `2.0.0-preview.4`
+- **Version**: `2.0.0-preview.5`
 - **Unity**: `2023.2`
 - **API Compatibility Level**: `.NET Standard 2.1`
 
 ### Dependencies
 
-- `com.ugf.editortools`: `3.0.0-preview.6`
+- `com.ugf.editortools`: `3.0.0-preview.9`
 - `com.ugf.runtimetools`: `3.0.0-preview`
 - `com.unity.ugui`: `2.0.0`
 
