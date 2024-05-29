@@ -113,7 +113,11 @@ namespace UGF.UI.Runtime.Layout
             for (int i = 0; i < m_layout.Children.Count; i++)
             {
                 Rect rect = m_layout.Children[i];
-                Rect rectWorld = UIUtility.GetWorldRect(rect, m_scroll.content);
+                Rect rectOffset = rect;
+
+                rectOffset.position -= new Vector2(m_scroll.content.rect.size.x * (m_scroll.content.pivot.x - 0.5F), m_scroll.content.rect.size.y * (m_scroll.content.pivot.y - 0.5F));
+
+                Rect rectWorld = UIUtility.GetWorldRect(rectOffset, m_scroll.content);
 
                 rectWorld.position -= rectWorld.size * 0.5F;
 
@@ -127,7 +131,7 @@ namespace UGF.UI.Runtime.Layout
 
                         if (container.transform is RectTransform rectTransform)
                         {
-                            rectTransform.localPosition = rect.position;
+                            rectTransform.anchoredPosition = rect.position;
                         }
                     }
                 }
