@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0](https://github.com/unity-game-framework/ugf-ui/releases/tag/2.0.0) - 2024-08-09  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-ui/milestone/8?closed=1)
+
 ## [2.0.0-preview.5](https://github.com/unity-game-framework/ugf-ui/releases/tag/2.0.0-preview.5) - 2024-05-29  
 
 ### Release Notes
